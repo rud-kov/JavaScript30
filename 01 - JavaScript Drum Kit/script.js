@@ -1,8 +1,6 @@
-
 const buttons = document.querySelectorAll(".key");
 
 buttons.forEach((button) => {
-
     const dataKey = button.dataset.key;
     let audio = document.querySelector(`.audio[data-key="${dataKey}"]`);
 
@@ -10,6 +8,7 @@ buttons.forEach((button) => {
         play(button, audio);
     })
 })
+
 
 document.addEventListener("keydown", function(event) {
 
@@ -31,6 +30,6 @@ function play(button, audio) {
     setTimeout(() => {
         button.classList.toggle("playing");
     }, 500)
+    audio.currentTime = 0;
     audio.play();
 }
-
