@@ -17,20 +17,20 @@ body {
 
   :root {
     --blur: 0px;
-    --range: 0px;
-    --color: #ffc600;
+    --spacing: 0px;
+    --base: #ffc600;
   }
 
   .hl {
-    color: var(--color);
+    color: var(--base);
   }
 
   .image {
     border: 10px;
     border-style: solid;
-    border-color: var(--color);
+    border-color: var(--base);
     filter: blur(var(--blur));
-    margin-left: var(--range);
+    margin-left: var(--spacing);
   }
 
 

@@ -1,20 +1,34 @@
-const image = document.querySelector(".image");
+/// CORRECT SOLUTION JEN INPUT TARGETUJE VARIABLES.. 
 
-const colorSpan = document.querySelector(".hl");
+const input = document.querySelectorAll(".input");
 
-document.getElementById("blur").addEventListener("change", () => {
-    document.documentElement.style.setProperty("--blur", `${document.getElementById("blur").value}px`);
+input.forEach(input => {
+    input.addEventListener("change", () => {
+        const dataSizing = input.dataset.sizing || '';
+        document.documentElement.style.setProperty(`--${input.name}`, `${input.value}` + `${dataSizing}`);
+    })
 });
 
-document.getElementById("spacing").addEventListener("change", () => {
-    document.documentElement.style.setProperty('--range', `${document.getElementById("spacing").value}px`);
-});
+
+/// JEDNODUŠŠÍ SOLUTION S TARGETOVÁNÍM VARIABLES (ALE POŘÁD PRACUJU S KONKRÉTNÍMA ELEMENTAMA)
+
+// 
+// document.getElementById("blur").addEventListener("change", () => {
+//     document.documentElement.style.setProperty("--blur", `${document.getElementById("blur").value}px`);
+// });
+// 
+// document.getElementById("spacing").addEventListener("change", () => {
+//     document.documentElement.style.setProperty('--range', `${document.getElementById("spacing").value}px`);
+// });
+// 
+// 
+// document.getElementById("base").addEventListener("change", () => {
+//     document.documentElement.style.setProperty('--color', `${document.getElementById("base").value}`);
+// });
 
 
-document.getElementById("base").addEventListener("change", () => {
-    document.documentElement.style.setProperty('--color', `${document.getElementById("base").value}`);
-});
 
+/// SLOŽITÝ SOLUTION S TARGETOVÁNÍM KONRÉTNÍCH ELEMENTŮ
 
 //const image = document.querySelector(".image");
 //
